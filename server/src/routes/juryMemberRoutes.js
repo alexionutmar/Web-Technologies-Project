@@ -1,17 +1,15 @@
 import express from "express";
-import db from "../../database.js";
-import { chooseJury } from "../dataAccess/StudentiDA.js";
+import { chooseJury } from "../dataAccess/StudentiDA.js";s
 
 const juryMemberRoutes = express.Router();
 
-// Route to choose chief member of jury
-juryMemberRoutes.route('/chooseChiefMemberOfJury/:projectId').put(async (req, res) => {
-  // Logic to choose chief member of jury
-});
+// // Route to choose chief member of jury
+// juryMemberRoutes.route('/chooseChiefMemberOfJury/:projectId').put(async (req, res) => {
+//   // Logic to choose chief member of jury
+// });
 
 // Route to choose jurors for a project
 juryMemberRoutes.route('/chooseJurors/:projectId').put(async (req, res) => {
-  // Logic to choose jurors for a project
   return res.json(await chooseJury(req.params.projectId));
 });
 
